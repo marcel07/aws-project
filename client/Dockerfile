@@ -1,8 +1,12 @@
 FROM node:alpine as builder
-WORKDIR '/app'
-COPY ./package.json ./
-RUN npm install
-COPY . .
+RUN mkdir -p /var/www/html
+
+WORKDIR /var/www/html
+
+EXPOSE 3000
+
+RUN npm run build
+
 CMD ["npm", "run", "start"]
 
 #FROM nginx
