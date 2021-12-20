@@ -5,11 +5,16 @@ WORKDIR /var/www/html
 
 EXPOSE 3000
 
-COPY package.json .
+COPY package.json /var/www/html/
+
+RUN cd /var/www/html/
+
+RUN npm install
+
+COPY . .
 
 RUN npm run build
 
-COPY . .
 
 CMD ["npm", "run", "start"]
 
