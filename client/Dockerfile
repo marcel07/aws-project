@@ -3,10 +3,10 @@ WORKDIR '/app'
 COPY ./package.json ./
 RUN npm install
 COPY . .
+RUN ls .
 RUN npm run build
 
 FROM nginx
 EXPOSE 3000
-RUN ls .
 COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
-COPY --from=builder /app/build /usr/local/bin/nginx/html
+COPY --from=builder ./public /usr/local/bin/nginx/html
