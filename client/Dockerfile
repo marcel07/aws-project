@@ -1,9 +1,8 @@
 FROM node:alpine as builder
-#WORKDIR /app
-#COPY ./package.json ./package.json
-RUN echo $pwd
-COPY . .
+WORKDIR /app
+COPY package.json .
 RUN npm install
+COPY . .
 RUN npm run build
 
 #FROM nginx
