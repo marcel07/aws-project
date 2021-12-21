@@ -3,10 +3,10 @@ RUN mkdir -p /var/www/html
 
 WORKDIR /var/www/html
 
-RUN pwd
+RUN echo $pwd
 EXPOSE 3000
 
-COPY package.json /var/www/html/
+#COPY package.json /var/www/html/
 
 
 #RUN npm install
