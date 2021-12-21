@@ -1,9 +1,10 @@
 FROM node:alpine as builder
 RUN mkdir -p /var/www/html
+RUN mkdir -p /dist
 
 WORKDIR /var/www/html
 
-RUN echo $pwd
+RUN ls .
 EXPOSE 3000
 
 #COPY package.json /var/www/html/
