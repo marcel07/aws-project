@@ -4,10 +4,11 @@ RUN mkdir -p /dist
 
 WORKDIR /var/www/html
 
-RUN ls .
 EXPOSE 3000
 
-#COPY package.json /var/www/html/
+COPY . /var/www/html/
+
+RUN ls .
 
 
 #RUN npm install
