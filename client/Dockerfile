@@ -6,14 +6,14 @@ WORKDIR /var/www/html
 
 EXPOSE 3000
 
-COPY . /var/www/html/
+COPY client/package.json /var/www/html/
 
 RUN ls .
 
 
-#RUN npm install
+RUN npm install
 
-#COPY . .
+COPY client /var/www/html/
 
 #RUN npm run build
 
