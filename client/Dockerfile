@@ -15,12 +15,9 @@ RUN npm install
 
 COPY client /var/www/html/
 
-#RUN npm run build
+RUN npm run build
 
-
-CMD ["npm", "run", "start"]
-
-#FROM nginx
-#EXPOSE 3000
-#COPY ./nginx/default.conf /etc/nginx/conf.d/default.conf
-#COPY --from=builder ./public /usr/local/bin/nginx/html
+FROM nginx
+EXPOSE 3000
+COPY client/nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY --from=builder ./public /etc/nginx/html
