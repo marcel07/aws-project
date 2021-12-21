@@ -1,6 +1,6 @@
 FROM node:alpine as builder
 RUN mkdir -p /var/www/html
-RUN mkdir -p /dist
+RUN mkdir -p /var/www/html/dist
 
 WORKDIR /var/www/html
 
