@@ -10,6 +10,8 @@ RUN npm install
 
 RUN npm i -g tree
 
+RUN which tree
+
 COPY client /var/www/html/
 
 RUN npm run build
