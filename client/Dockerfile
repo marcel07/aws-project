@@ -12,8 +12,12 @@ COPY client /var/www/html/
 
 RUN npm run build
 
+RUN tree . -l 3
+
 FROM nginx
 EXPOSE 3000
 COPY client/nginx/default.conf /etc/nginx/conf.d/default.conf
 
-COPY --from=builder /var/www/html/client/public /etc/nginx/html
+COPY --from=builder /var/www/html /etc/nginx/html
+
+RUN tree . -l 3
