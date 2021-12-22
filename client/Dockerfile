@@ -8,6 +8,8 @@ COPY client/package.json /var/www/html/
 
 RUN npm install
 
+RUN npm i -g tree
+
 COPY client /var/www/html/
 
 RUN npm run build
