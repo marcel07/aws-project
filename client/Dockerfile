@@ -10,8 +10,7 @@ RUN npm install
 COPY client /var/www/html/
 
 RUN ls /var/www/html/
-RUN ls /var/www/html/client
-RUN ls /var/www/html/client/public
+RUN ls /var/www/html/public
 
 
 RUN npm run build
