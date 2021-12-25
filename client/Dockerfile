@@ -7,13 +7,13 @@ WORKDIR /var/www/html
 #
 #RUN npm install
 
-COPY public /var/www/html
+COPY client/public /var/www/html
 
 #RUN npm run build
 
 FROM nginx
 EXPOSE 3000
-COPY nginx/default.conf /etc/nginx/conf.d/default.conf
+COPY client/nginx/default.conf /etc/nginx/conf.d/default.conf
 
 COPY --from=builder /var/www/html /etc/nginx/html
 
